@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+dp_margin_approvel.access_margin_approval,access_margin_approval,dp_margin_approvel.model_margin_approval,base.group_user,1,1,1,1
+dp_margin_approvel.access_margin_approval_groups,access_margin_approval_groups,dp_margin_approvel.model_margin_approval_groups,base.group_user,1,1,1,1

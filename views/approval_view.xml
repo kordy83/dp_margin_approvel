@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="margin_approval_view_tree" model="ir.ui.view">
+        <field name="name">margin.approval.view.tree</field>
+        <field name="model">margin.approval</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="user_ids" widget='many2many_tags'/>
+                <field name="margin_amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="margin_approval_view_form" model="ir.ui.view">
+        <field name="name">margin.approval.view.form</field>
+        <field name="model">margin.approval</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" class="oe_inline"/></h1>
+                    </div>
+                     <group>
+                        <group>
+                            <field name="user_ids" widget='many2many_tags'/>
+                        </group>
+                        <group>
+                            <field name="min_margin_amount"/>
+                            <field name="margin_amount"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="margin_approval_action_dp" model="ir.actions.act_window">
+        <field name="name">Approval Margin Rules</field>
+        <field name="res_model">margin.approval</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Approval
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="erpweb_menu_margin_approval"
+        name="Approval Margin Rules"
+        action="margin_approval_action_dp"
+        parent="sale.menu_sale_config"
+        groups="dp_margin_approvel.group_margin_rules"
+        sequence="120"/>
+
+    
+</odoo>

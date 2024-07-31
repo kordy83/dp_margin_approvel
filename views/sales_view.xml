@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>    
+    <!-- SALE VIEW -->
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_quotation_send']" position='after'>
+                <button name="approve_order" string="Approve" class="oe_highlight" type="object"
+                invisible="state != 'to_approve'"/>
+                <button name="rejected_order" string="Rejected" class="oe_highlight" type="object"
+                 invisible="state != 'to_approve'"/>
+            </xpath>
+
+            <notebook position="inside">
+                <page string="Approval" name="page_approval">
+                    <field name="margin_approval_ids" readonly='True' >
+                        <tree decoration-danger="status == 'rejected'" decoration-warning="status == 'none'" decoration-success="status == 'approved'">
+                            <field name="user_id" widget='many2one_avatar_user'/>
+                            <field name="status"/>
+                            <field name="approval_date"/>
+                            <field name="required_user_ids" widget="many2many_tags"/>
+                            <field name="order_id" invisible="1"/>
+                            <field name="approval_data_id" invisible="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+
+        </field>
+    </record>
+</odoo>

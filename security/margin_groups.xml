@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="res.groups" id="group_margin_rules">
+            <field name="name">Allow Margin Rules</field>
+        </record>
+    </data>
+</odoo>
