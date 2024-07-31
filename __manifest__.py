@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# DP InfoSol PVT LTD. See LICENSE file for full copyright and licensing details.
+
 {
     'name'        : 'Margin Approvel',
     'version'     : '17.0',
-    "author"      : "DP InfoSol",
-    "support"     : "help.dpinfosol@gmail.com",
+    "author"      : "Kordy",
+    "support"     : "kordy.com",
     'category'    : 'account',
     'summary'     : '''This helps you to need to users Approvel based on margin approvel rule''',
     'description' : """ This helps you to need to users Approvel based on rule margin approvel rule""",
